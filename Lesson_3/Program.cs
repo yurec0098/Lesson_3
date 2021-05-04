@@ -12,14 +12,13 @@ namespace Lesson_3
 		 * а О — свободные клетки */
 		static void Main(string[] args)
 		{
-			bool isEndGame = false;
 			var log = new List<LogItem>();
 			var random = new Random((int)DateTime.Now.Ticks);
 
 			var sea = new Sea(random, 2, 2);
 			var enemy_sea = new Sea(random, 30, 2);
 
-			while (!isEndGame)
+			while (true)
 			{
 				Console.Clear();
 				Console.WriteLine("{0,-15} {1,15}", "", "Игра «Морской бой»");
@@ -33,10 +32,7 @@ namespace Lesson_3
 				Console.WriteLine();
 
 				if (sea.IsAllShipsKill() || enemy_sea.IsAllShipsKill())
-				{
-					isEndGame = true;
 					break;
-				}
 
 				UserShoot(enemy_sea, log);
 
