@@ -29,7 +29,14 @@ namespace Lesson_3
 			for (int i = 0; i < 10; i++)
 			{
 				for (int j = 0; j < 10; j++)
+				{
+					if (i == j)
+						Console.ForegroundColor = ConsoleColor.Green;
+					if (9 - i == j)
+						Console.ForegroundColor = ConsoleColor.Blue;
 					Console.Write($"{array[i, j]} ");
+					Console.ForegroundColor = ConsoleColor.White;
+				}
 				Console.WriteLine();
 			}
 		}
